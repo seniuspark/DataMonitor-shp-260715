@@ -1,4 +1,4 @@
-#include "StockStatusJudge.h"
+﻿#include "StockStatusJudge.h"
 
 #include <algorithm>
 
