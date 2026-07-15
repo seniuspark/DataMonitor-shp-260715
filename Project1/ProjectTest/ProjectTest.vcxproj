@@ -139,14 +139,21 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="..\Project1\OrderTypes.h" />
     <ClInclude Include="..\Project1\OrderAggregation.h" />
+    <ClInclude Include="..\Project1\StockTypes.h" />
+    <ClInclude Include="..\Project1\StockStatusJudge.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="OrderAggregationTest.cpp" />
+    <ClCompile Include="StockStatusJudgeTest.cpp" />
     <ClCompile Include="..\Project1\OrderAggregation.cpp">
       <ObjectFileName>$(IntDir)\OrderAggregation_lib.obj</ObjectFileName>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Project1\StockStatusJudge.cpp">
+      <ObjectFileName>$(IntDir)\StockStatusJudge_lib.obj</ObjectFileName>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>

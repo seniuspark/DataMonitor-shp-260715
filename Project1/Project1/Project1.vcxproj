@@ -146,10 +146,13 @@
   <ItemGroup>
     <ClInclude Include="OrderTypes.h" />
     <ClInclude Include="OrderAggregation.h" />
+    <ClInclude Include="StockTypes.h" />
+    <ClInclude Include="StockStatusJudge.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="OrderAggregation.cpp" />
+    <ClCompile Include="StockStatusJudge.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
