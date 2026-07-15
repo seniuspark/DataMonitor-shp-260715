@@ -6,17 +6,22 @@
 
 ## 전제 조건 (중요)
 
-- **Json/ 의 스키마 확정 전제**: 이 PoC는 `Json/` PoC가 정한 저장 포맷(파일
-  경로, JSON 필드명, 주문/시료 구조)을 그대로 읽어야 한다. 이 문서 작성
-  시점에는 `Json/docs/Plan.md` 및 실제 JSON 스키마가 아직 확정되지 않았다.
-  **Phase 3(파일 로딩) 착수 전에 반드시 `Json/`의 확정 스키마를 다시 확인하고,
-  아래 "가정 스키마"를 실제 스키마에 맞게 갱신해야 한다.**
+- **Json/ 스키마 확정됨**: 이 PoC는 `Json/` PoC가 정한 저장 포맷(파일 경로,
+  JSON 필드명, 주문/시료 구조)을 그대로 읽어야 한다. `Json/docs/Plan.md` 기준
+  실제 JSON 스키마가 아래와 같이 확정되었다.
 - Phase 1~2(순수 함수)는 스키마와 무관한 내부 도메인 구조체(`Order`, `Sample`)만
-  다루므로 스키마 확정 여부와 무관하게 먼저 진행할 수 있다.
-- 가정 스키마(잠정, 상위 CLAUDE.md 도메인 모델 기준):
-  - 주문: `OrderId`, `SampleId`, `CustomerName`, `Quantity`, `Status`
-    (`RESERVED`/`REJECTED`/`PRODUCING`/`CONFIRMED`/`RELEASE`), `CreatedAt`
-  - 시료: `SampleId`, `Name`, `AvgProductionTime`, `Yield`, `Stock`
+  다루므로 아래 확정 스키마와 무관하게 진행할 수 있다. 단, 내부 C++ 구조체의
+  멤버 네이밍은 C++ 컨벤션(camelCase 등)을 유지해도 무방하며, 중요한 것은 JSON
+  파일을 읽는 Phase 3에서 파싱 대상 키(key)가 아래 확정 스키마와 정확히
+  일치해야 한다는 점이다.
+- 확정 스키마 (`Json/docs/Plan.md` 기준):
+  - 파일 경로: `data/samples.json`, `data/orders.json`
+  - 최상위 래핑: `{"samples": [...]}`, `{"orders": [...]}`
+  - 시료(camelCase 필드): `sampleId`, `name`, `avgProductionTime`, `yield`,
+    `stock`
+  - 주문(camelCase 필드): `orderId`, `sampleId`, `customerName`, `quantity`,
+    `status`, `createdAt`
+  - `status`는 문자열: `RESERVED`/`REJECTED`/`PRODUCING`/`CONFIRMED`/`RELEASE`
 
 ## Phase 구성 개요
 
