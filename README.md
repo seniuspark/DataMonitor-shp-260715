@@ -95,8 +95,8 @@ std::vector<Sample> LoadSamples(const std::string& path);
 std::vector<Order> LoadOrders(const std::string& path);
 ```
 
-`Json/` PoC가 확정한 스키마를 그대로 읽는다(아래 "JSON 스키마" 절 참고).
-`nlohmann::json`으로 파싱한다. 정책:
+아래 "JSON 스키마" 절에서 정의한 포맷을 읽는다. `nlohmann::json`으로 파싱한다.
+정책:
 - 파일이 없으면 `std::runtime_error`.
 - `status` 문자열이 알려진 5개 값(`RESERVED`/`REJECTED`/`PRODUCING`/
   `CONFIRMED`/`RELEASE`) 중 하나가 아니면 `std::runtime_error`(무시하지 않고
@@ -135,9 +135,9 @@ std::string RenderStockLevels(const std::vector<StockLevel>& levels);
 표시한다. 시료 목록이 비어 있으면 "데이터 없음"을 반환한다. `Main.cpp`는 이
 문자열들을 `std::cout`으로 출력하기만 한다(콘솔 I/O와 렌더링 로직 분리).
 
-## JSON 스키마 (Json/ PoC와 동일)
+## JSON 스키마
 
-`Json/docs/Plan.md`에서 확정한 스키마를 그대로 읽는다.
+이 저장소가 읽는 데이터 파일의 스키마는 다음과 같다.
 
 - 파일 경로: `data/samples.json`, `data/orders.json` (기본값. 실행 시 인자로
   디렉토리 변경 가능)
