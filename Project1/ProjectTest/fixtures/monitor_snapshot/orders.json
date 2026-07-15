@@ -1,0 +1,7 @@
+{
+  "orders": [
+    { "orderId": "ORD-20260416-0001", "sampleId": "S-001", "customerName": "CustomerA", "quantity": 5, "status": "RESERVED", "createdAt": "2026-04-16T10:00:00" },
+    { "orderId": "ORD-20260416-0002", "sampleId": "S-001", "customerName": "CustomerB", "quantity": 3, "status": "CONFIRMED", "createdAt": "2026-04-16T11:00:00" },
+    { "orderId": "ORD-20260416-0003", "sampleId": "S-002", "customerName": "CustomerC", "quantity": 2, "status": "REJECTED", "createdAt": "2026-04-16T12:00:00" }
+  ]
+}
