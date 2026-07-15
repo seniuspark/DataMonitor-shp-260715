@@ -150,6 +150,8 @@
     <ClInclude Include="..\Project1\SampleTypes.h" />
     <ClInclude Include="..\Project1\JsonReader.h" />
     <ClInclude Include="..\Project1\MonitorAssembly.h" />
+    <ClInclude Include="..\Project1\ConsoleRenderer.h" />
+    <ClInclude Include="..\Project1\MonitorSnapshot.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -159,6 +161,8 @@
     <ClCompile Include="StockStatusJudgeTest.cpp" />
     <ClCompile Include="JsonReaderTest.cpp" />
     <ClCompile Include="MonitorAssemblyTest.cpp" />
+    <ClCompile Include="ConsoleRendererTest.cpp" />
+    <ClCompile Include="MonitorSnapshotTest.cpp" />
     <ClCompile Include="..\Project1\OrderAggregation.cpp">
       <ObjectFileName>$(IntDir)\OrderAggregation_lib.obj</ObjectFileName>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
@@ -175,6 +179,14 @@
       <ObjectFileName>$(IntDir)\MonitorAssembly_lib.obj</ObjectFileName>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="..\Project1\ConsoleRenderer.cpp">
+      <ObjectFileName>$(IntDir)\ConsoleRenderer_lib.obj</ObjectFileName>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Project1\MonitorSnapshot.cpp">
+      <ObjectFileName>$(IntDir)\MonitorSnapshot_lib.obj</ObjectFileName>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="fixtures\samples_valid.json" />
@@ -183,6 +195,8 @@
     <None Include="fixtures\orders_all_statuses.json" />
     <None Include="fixtures\orders_unknown_status.json" />
     <None Include="fixtures\orders_empty.json" />
+    <None Include="fixtures\monitor_snapshot\samples.json" />
+    <None Include="fixtures\monitor_snapshot\orders.json" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn">

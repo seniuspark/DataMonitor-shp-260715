@@ -152,6 +152,8 @@
     <ClInclude Include="SampleTypes.h" />
     <ClInclude Include="JsonReader.h" />
     <ClInclude Include="MonitorAssembly.h" />
+    <ClInclude Include="ConsoleRenderer.h" />
+    <ClInclude Include="MonitorSnapshot.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
@@ -159,6 +161,8 @@
     <ClCompile Include="StockStatusJudge.cpp" />
     <ClCompile Include="JsonReader.cpp" />
     <ClCompile Include="MonitorAssembly.cpp" />
+    <ClCompile Include="ConsoleRenderer.cpp" />
+    <ClCompile Include="MonitorSnapshot.cpp" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="nlohmann.json">
