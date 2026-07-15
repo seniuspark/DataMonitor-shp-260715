@@ -1,4 +1,4 @@
-#include "pch.h"
+﻿#include "pch.h"
 #include "../Project1/MonitorSnapshot.h"
 
 #include <filesystem>
