@@ -1,0 +1,5 @@
+{
+  "orders": [
+    { "orderId": "ORD-1", "sampleId": "S-001", "customerName": "C", "quantity": 1, "status": "UNKNOWN", "createdAt": "t" }
+  ]
+}

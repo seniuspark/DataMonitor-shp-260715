@@ -117,6 +117,9 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /i /e "$(ProjectDir)fixtures" "$(OutDir)fixtures" &gt; nul</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -134,6 +137,9 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /i /e "$(ProjectDir)fixtures" "$(OutDir)fixtures" &gt; nul</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -141,6 +147,9 @@
     <ClInclude Include="..\Project1\OrderAggregation.h" />
     <ClInclude Include="..\Project1\StockTypes.h" />
     <ClInclude Include="..\Project1\StockStatusJudge.h" />
+    <ClInclude Include="..\Project1\SampleTypes.h" />
+    <ClInclude Include="..\Project1\JsonReader.h" />
+    <ClInclude Include="..\Project1\MonitorAssembly.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -148,6 +157,8 @@
     </ClCompile>
     <ClCompile Include="OrderAggregationTest.cpp" />
     <ClCompile Include="StockStatusJudgeTest.cpp" />
+    <ClCompile Include="JsonReaderTest.cpp" />
+    <ClCompile Include="MonitorAssemblyTest.cpp" />
     <ClCompile Include="..\Project1\OrderAggregation.cpp">
       <ObjectFileName>$(IntDir)\OrderAggregation_lib.obj</ObjectFileName>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
@@ -156,10 +167,29 @@
       <ObjectFileName>$(IntDir)\StockStatusJudge_lib.obj</ObjectFileName>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="..\Project1\JsonReader.cpp">
+      <ObjectFileName>$(IntDir)\JsonReader_lib.obj</ObjectFileName>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Project1\MonitorAssembly.cpp">
+      <ObjectFileName>$(IntDir)\MonitorAssembly_lib.obj</ObjectFileName>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="fixtures\samples_valid.json" />
+    <None Include="fixtures\samples_empty.json" />
+    <None Include="fixtures\orders_valid.json" />
+    <None Include="fixtures\orders_all_statuses.json" />
+    <None Include="fixtures\orders_unknown_status.json" />
+    <None Include="fixtures\orders_empty.json" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn">
       <Version>1.8.1.8</Version>
+    </PackageReference>
+    <PackageReference Include="nlohmann.json">
+      <Version>3.11.3</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

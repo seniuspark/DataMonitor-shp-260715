@@ -1,0 +1,6 @@
+{
+  "samples": [
+    { "sampleId": "S-001", "name": "SampleA", "avgProductionTime": 30, "yield": 0.9, "stock": 12 },
+    { "sampleId": "S-002", "name": "SampleB", "avgProductionTime": 20, "yield": 0.8, "stock": 0 }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "orders": [
+    { "orderId": "ORD-1", "sampleId": "S-001", "customerName": "C", "quantity": 1, "status": "RESERVED", "createdAt": "t" },
+    { "orderId": "ORD-2", "sampleId": "S-001", "customerName": "C", "quantity": 1, "status": "REJECTED", "createdAt": "t" },
+    { "orderId": "ORD-3", "sampleId": "S-001", "customerName": "C", "quantity": 1, "status": "PRODUCING", "createdAt": "t" },
+    { "orderId": "ORD-4", "sampleId": "S-001", "customerName": "C", "quantity": 1, "status": "CONFIRMED", "createdAt": "t" },
+    { "orderId": "ORD-5", "sampleId": "S-001", "customerName": "C", "quantity": 1, "status": "RELEASE", "createdAt": "t" }
+  ]
+}
